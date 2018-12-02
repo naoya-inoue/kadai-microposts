@@ -52,4 +52,9 @@ class MicropostsController extends Controller
          
          return redirect()->back();
      }
+     
+     public function user_favorites()
+    {
+        return $this->belongsToMany(User::class, 'favorites', 'micropost_id', 'user_id')->withTimestamps();
+    }
 }
